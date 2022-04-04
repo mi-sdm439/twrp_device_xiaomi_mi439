@@ -101,10 +101,27 @@ TARGET_RECOVERY_DEVICE_MODULES += tombstoned
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/tombstoned
 
 TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service \
+    android.system.suspend@1.0 \
     libandroidicu \
+    libhardware_legacy \
+    libkeymaster3device \
+    libprocinfo \
+    libpuresoftkeymasterdevice \
     libxml2
 
-RECOVERY_LIBRARY_SOURCE_FILES += \
+TW_RECOVERY_ADDITIONAL_RELINK_BINARY_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/android.hardware.keymaster@3.0-service
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0-impl.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.suspend@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware_legacy.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libprocinfo.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 -include $(DEVICE_PATH)/BoardConfigOFOX.mk
