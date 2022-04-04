@@ -18,6 +18,11 @@
 PRODUCT_PACKAGES += \
     qcom_decrypt
 
+# Init scripts
+PRODUCT_COPY_FILES += \
+    bootable/recovery/etc/init/hwservicemanager.rc:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/init/hwservicemanager.rc \
+    bootable/recovery/etc/init/vndservicemanager.rc:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/init/vndservicemanager.rc
+
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8937
