@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Crypto
+PRODUCT_PACKAGES += \
+    qcom_decrypt
+
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8937
