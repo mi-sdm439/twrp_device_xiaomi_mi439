@@ -14,20 +14,6 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := mi8937
-
-$(call inherit-product, build/target/product/embedded.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
-
-# Inherit from mi8937 device
-$(call inherit-product, device/xiaomi/mi8937/device.mk)
-
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := mi8937
-PRODUCT_NAME := omni_mi8937
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MSM8937
-PRODUCT_MANUFACTURER := Xiaomi
+# Keymaster
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8937
