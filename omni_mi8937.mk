@@ -17,17 +17,21 @@
 # Release name
 PRODUCT_RELEASE_NAME := mi8937
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product-if-exists, vendor/omni/config/common.mk)
-
-# Inherit from mi8937 device
+# Inherit from device
 $(call inherit-product, device/xiaomi/mi8937/device.mk)
 
-# Device identifier. This must come after all inclusions
+# Inherit common product files.
+$(call inherit-product-if-exists, vendor/omni/config/common.mk)
+$(call inherit-product-if-exists, vendor/pb/config/common.mk)
+
+# Set those variables here to overwrite the inherited values.
+BOARD_VENDOR := Xiaomi
+PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := mi8937
 PRODUCT_NAME := omni_mi8937
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MSM8937
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := MSM8937
+TARGET_VENDOR := Xiaomi
