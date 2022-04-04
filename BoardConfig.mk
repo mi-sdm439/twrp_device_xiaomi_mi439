@@ -100,6 +100,13 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 TARGET_RECOVERY_DEVICE_MODULES += tombstoned
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/tombstoned
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libandroidicu \
+    libxml2
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
+
 -include $(DEVICE_PATH)/BoardConfigOFOX.mk
 -include $(DEVICE_PATH)/BoardConfigSHRP.mk
 -include vendor/kud/config/recovery.mk
