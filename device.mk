@@ -22,6 +22,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt
 
+ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw),)
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)/cryptfs_hw
+endif
+
 # Init scripts
 ifneq ($(wildcard vendor/pb),)
 PRODUCT_COPY_FILES += \
