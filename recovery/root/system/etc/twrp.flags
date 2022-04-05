@@ -3,7 +3,7 @@
 /cache          ext4   /dev/block/bootdevice/by-name/cache
 /recovery       emmc   /dev/block/bootdevice/by-name/recovery                    flags=backup=1
 /system_root    ext4   /dev/block/bootdevice/by-name/system                      flags=backup=0;display="System"
-/vendor         ext4   /dev/block/bootdevice/by-name/cust                        flags=display="Vendor";wipeingui
+/vendor         ext4   /dev/block/bootdevice/by-name/cust                        flags=display="Vendor"
 
 /system_image   emmc   /dev/block/bootdevice/by-name/system
 /vendor_image   emmc   /dev/block/bootdevice/by-name/cust
