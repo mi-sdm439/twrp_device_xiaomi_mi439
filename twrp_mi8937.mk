@@ -14,18 +14,23 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_mi8937.mk
+# Release name
+PRODUCT_RELEASE_NAME := mi8937
 
-COMMON_LUNCH_CHOICES := \
-	omni_mi8937-user \
-	omni_mi8937-userdebug \
-	omni_mi8937-eng
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
-PRODUCT_MAKEFILES += \
-	$(LOCAL_DIR)/twrp_mi8937.mk
+# Inherit from device
+$(call inherit-product, device/xiaomi/mi8937/device.mk)
 
-COMMON_LUNCH_CHOICES += \
-	twrp_mi8937-user \
-	twrp_mi8937-userdebug \
-	twrp_mi8937-eng
+# Inherit common product files.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Set those variables here to overwrite the inherited values.
+BOARD_VENDOR := Xiaomi
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := mi8937
+PRODUCT_NAME := twrp_mi8937
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := MSM8937
+TARGET_VENDOR := Xiaomi
