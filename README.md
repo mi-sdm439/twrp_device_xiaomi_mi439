@@ -1,11 +1,11 @@
-# android_device_xiaomi_mi8937
+# android_device_xiaomi_mi439
 
-For building TWRP for Xiaomi MSM8937 Devices
+For building TWRP for Xiaomi SDM439 Devices
 
 To compile:
 
 ```
-. build/envsetup.sh && breakfast mi8937 eng && mka recoveryimage
+. build/envsetup.sh && breakfast mi439 eng && mka recoveryimage
 ```
 
-Kernel source: [mi-msm8937/android_kernel_xiaomi_msm8937](https://github.com/mi-msm8937/android_kernel_xiaomi_msm8937)
+Kernel source: [mi-sdm439/android_kernel_xiaomi_sdm439](https://github.com/mi-sdm439/android_kernel_xiaomi_sdm439)

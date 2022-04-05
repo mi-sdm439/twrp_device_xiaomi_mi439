@@ -5,7 +5,7 @@ ifneq ($(SHRP_BUILD),)
 IS_OFFICIAL := false
 
 # Mandatory flags
-SHRP_DEVICE_CODE := mi8937
+SHRP_DEVICE_CODE := mi439
 SHRP_PATH := device/xiaomi/$(SHRP_DEVICE_CODE)
 SHRP_REC_TYPE := Normal
 SHRP_DEVICE_TYPE := A-only
