@@ -22,6 +22,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt
 
+PRODUCT_COPY_FILES += \
+    $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/obj/SHARED_LIBRARIES/libcryptfs_hw_intermediates/libcryptfs_hw.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libcryptfs_hw.so
+
 ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw),)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)/cryptfs_hw
