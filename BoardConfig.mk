@@ -35,7 +35,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Crypto
 BOARD_USES_QCOM_DECRYPTION := true
-ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw),)
+ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw/Android.bp),)
 TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 else
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw

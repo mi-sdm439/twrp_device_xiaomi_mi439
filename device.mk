@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/obj/SHARED_LIBRARIES/libcryptfs_hw_intermediates/libcryptfs_hw.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libcryptfs_hw.so
 
-ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw),)
+ifeq ($(wildcard vendor/qcom/opensource/cryptfs_hw/Android.bp),)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)/cryptfs_hw
 else
