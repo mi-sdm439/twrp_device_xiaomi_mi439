@@ -7,6 +7,7 @@
 /system_root    ext4   /dev/block/bootdevice/by-name/system                      flags=backup=0;display="System";wipeingui
 /vendor         ext4   /dev/block/bootdevice/by-name/vendor                      flags=display="Vendor";wipeingui
 
+/cust_image     emmc   /dev/block/bootdevice/by-name/cust
 /system_image   emmc   /dev/block/bootdevice/by-name/system
 /vendor_image   emmc   /dev/block/bootdevice/by-name/vendor
 /data           ext4   /dev/block/bootdevice/by-name/userdata                    flags=fileencryption=ice
