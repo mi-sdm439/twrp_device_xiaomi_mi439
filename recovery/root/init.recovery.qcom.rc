@@ -1,5 +1,11 @@
 import /init.recovery.qcom_decrypt.rc
 
+service hvdcp_opti /system/bin/hvdcp_opti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 service set-device-props /system/bin/set-device-props.sh
     user root
     group root
@@ -13,4 +19,5 @@ on fs
     export ANDROID_ROOT /system_root
 
 on boot
+    start hvdcp_opti
     start set-device-props
