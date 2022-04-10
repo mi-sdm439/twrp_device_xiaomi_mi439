@@ -44,3 +44,5 @@ endif
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8937
+
+$(call inherit-product-if-exists, vendor/extras/product.mk)

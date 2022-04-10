@@ -121,3 +121,4 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 -include $(DEVICE_PATH)/BoardConfigPBRP.mk
 -include $(DEVICE_PATH)/BoardConfigSHRP.mk
 -include vendor/kud/config/recovery.mk
+-include vendor/extras/board.mk
