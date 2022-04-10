@@ -1,6 +1,13 @@
 #!/sbin/sh
 
+LAST_CODENAME_FILE="/cache/last-recovery-codename"
+
+CODENAME_SET=""
+
 set_device_codename() {
+	if [ "$CODENAME_SET" ]; then return; fi
+	CODENAME_SET="1"
+
 	resetprop "ro.build.product" "$1"
 	resetprop "ro.omni.device" "$1"
 	resetprop "ro.product.device" "$1"
@@ -15,6 +22,12 @@ set_device_model() {
 		resetprop "ro.product.${i}.model" "$1"
 	done
 }
+
+if [ -f "$LAST_CODENAME_FILE" ]; then
+	if [ "cat $LAST_CODENAME_FILE || true" ]; then
+		set_device_codename "$(cat $LAST_CODENAME_FILE)"
+	fi
+fi
 
 case "$(cat /sys/firmware/devicetree/base/model)" in
 	"PINE QRD")
