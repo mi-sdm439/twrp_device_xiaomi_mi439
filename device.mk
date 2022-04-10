@@ -34,10 +34,6 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/obj/SHARED_LIBRARIES/vendor.qti.hardware.cryptfshw@1.0_intermediates/vendor.qti.hardware.cryptfshw@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/hw/vendor.qti.hardware.cryptfshw@1.0.so
 endif
 
-# Fastboot
-PRODUCT_PACKAGES += \
-    fastboot
-
 # Init scripts
 ifneq ($(wildcard vendor/pb),)
 PRODUCT_COPY_FILES += \
