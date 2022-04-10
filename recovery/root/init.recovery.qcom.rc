@@ -20,8 +20,4 @@ on fs
 
 on boot
     start hvdcp_opti
-
-on post-fs
-    mkdir /cache
-    mount ext4 /dev/block/bootdevice/by-name/cache /cache rw discard
     start set-device-props
