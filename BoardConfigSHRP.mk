@@ -24,7 +24,7 @@ SHRP_STATUSBAR_LEFT_PADDING :=
 SHRP_NOTCH := 
 SHRP_EXPRESS := true
 SHRP_EXPRESS_USE_DATA := 
-SHRP_DARK := # White theme looks better, we aren't AMOLED so don't have to stick to dark theme
+SHRP_DARK := true
 # People want white flashlight even on recovery it seems
 SHRP_CUSTOM_FLASHLIGHT := true
 SHRP_FONP_1 := /sys/class/leds/flashlight/brightness
