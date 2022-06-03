@@ -20,4 +20,6 @@ on fs
 
 on boot
     start hvdcp_opti
+
+on init
     start set-device-props
