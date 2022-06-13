@@ -23,13 +23,6 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Init scripts
-ifneq ($(wildcard vendor/pb),)
-PRODUCT_COPY_FILES += \
-    bootable/recovery/etc/init/hwservicemanager.rc:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/init/hwservicemanager.rc \
-    bootable/recovery/etc/init/vndservicemanager.rc:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/init/vndservicemanager.rc
-endif
-
 # OEM otacerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/miui
