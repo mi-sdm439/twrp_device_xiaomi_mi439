@@ -6,6 +6,13 @@ service hvdcp_opti /system/bin/hvdcp_opti
     disabled
     seclabel u:r:recovery:s0
 
+service protect-partitions /system/bin/protect-partitions.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service set-device-props /system/bin/set-device-props.sh
     user root
     group root
@@ -23,3 +30,7 @@ on boot
 
 on init
     start set-device-props
+
+on boot
+    start protect-partitions
+    exec u:r:recovery:s0 -- /system/bin/blockdev --setro /dev/block/mmcblk0
