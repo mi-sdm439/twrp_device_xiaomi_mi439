@@ -27,4 +27,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/miui
 
+# Utils
+PRODUCT_PACKAGES += \
+    blkroset
+
 $(call inherit-product-if-exists, vendor/extras/product.mk)
