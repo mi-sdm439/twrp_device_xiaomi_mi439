@@ -29,6 +29,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 # Utils
 PRODUCT_PACKAGES += \
-    blkroset
+    blkroset.mi439
 
 $(call inherit-product-if-exists, vendor/extras/product.mk)

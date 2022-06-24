@@ -33,4 +33,4 @@ on init
 
 on boot
     start protect-partitions
-    exec u:r:recovery:s0 -- /system/bin/blkroset /dev/block/mmcblk0
+    exec u:r:recovery:s0 -- /system/bin/blkroset.mi439 /dev/block/mmcblk0
