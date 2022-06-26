@@ -50,14 +50,16 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0x78B0000 loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true androidboot.selinux=permissive firmware_class.path=/vendor/firmware
 BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+TARGET_KERNEL_CONFIG := vendor/mi439_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm439-4.19
+TARGET_KERNEL_CLANG_COMPILE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm439
