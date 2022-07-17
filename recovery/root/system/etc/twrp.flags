@@ -5,6 +5,7 @@
 /vbmeta         emmc   /dev/block/bootdevice/by-name/vbmeta                      flags=display="VBMeta";backup=1;flashimg=1
 /cache          ext4   /dev/block/bootdevice/by-name/cache
 
+/metadata       ext4   /dev/block/bootdevice/by-name/logdump                     flags=display="Metadata"
 /data           ext4   /dev/block/bootdevice/by-name/userdata                    flags=fileencryption=ice
 /firmware       vfat   /dev/block/bootdevice/by-name/modem                       flags=display="Firmware";mounttodecrypt;fsflags="ro"
 /persist        ext4   /dev/block/bootdevice/by-name/persist                     flags=display="Persist"
