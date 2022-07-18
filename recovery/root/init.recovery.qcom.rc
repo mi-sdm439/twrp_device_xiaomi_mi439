@@ -6,6 +6,13 @@ service hvdcp_opti /system/bin/hvdcp_opti
     disabled
     seclabel u:r:recovery:s0
 
+service detect-dynamic-partitions /system/bin/detect-dynamic-partitions.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service protect-partitions /system/bin/protect-partitions.sh
     user root
     group root
@@ -30,6 +37,7 @@ on boot
     start hvdcp_opti
 
 on init
+    start detect-dynamic-partitions
     start set-device-props
 
 on boot
