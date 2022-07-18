@@ -26,6 +26,7 @@ on fs
     export ANDROID_ROOT /system_root
 
 on boot
+    start health-hal-2-1
     start hvdcp_opti
 
 on init
